@@ -170,6 +170,28 @@ re-execute the command when it detects a change.
 
 TODO: add link to scala school lesson on SBT
 
+### Log some information about your service.
+
+You can use the com.twitter.logging package to implement logging for your
+service. You can use this package by adding this to the top of your Scala
+file.
+
+	import com.twitter.logging.Logger
+
+Now, you can initialize the logger using:
+
+	private[this] val log = Logger.get("class_name")
+
+and then log information based on a series of "Levels." As specified by
+the API (linked below), they include "critical", "debug", "fatal", "info,"
+and "warning."
+
+For example, if you want to log an info message, you can use:
+
+	log.info("Starting birdname service now.")
+
+Documentation for the logging package is online at go/logging.
+
 ### Add an admin / dashboard page.
 
 ### Add a new dependency to your project, perhaps twitter/util?
