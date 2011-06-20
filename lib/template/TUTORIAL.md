@@ -170,6 +170,21 @@ re-execute the command when it detects a change.
 
 TODO: add link to scala school lesson on SBT
 
+### Log some information about your service.
+
+You can use the java.util.logging package to implement logging for your
+service. You can initialize logging:
+
+	private[this] val log = java.util.logging.Logger.getLogger("birdname")
+
+and then log information based on a series of "Levels." As specified by
+java.util.logging.Level, there are 7 such levels: SEVERE (highest value)
+WARNING, INFO, CONFIG, FINE, FINER, and FINEST (lowest value).
+
+For example, if you want to log an info message, you can use:
+
+	log.info("Starting birdname service now.")
+
 ### Add an admin / dashboard page.
 
 ### Add a new dependency to your project, perhaps twitter/util?
