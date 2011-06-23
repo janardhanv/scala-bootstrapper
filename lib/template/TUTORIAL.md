@@ -172,18 +172,25 @@ TODO: add link to scala school lesson on SBT
 
 ### Log some information about your service.
 
-You can use the java.util.logging package to implement logging for your
-service. You can initialize logging:
+You can use the com.twitter.logging package to implement logging for your
+service. You can use this package by adding this to the top of your Scala
+file.
 
-	private[this] val log = java.util.logging.Logger.getLogger("birdname")
+	import com.twitter.logging.Logger
+
+Now, you can initialize the logger using:
+
+	private[this] val log = Logger.get("class_name")
 
 and then log information based on a series of "Levels." As specified by
-java.util.logging.Level, there are 7 such levels: SEVERE (highest value)
-WARNING, INFO, CONFIG, FINE, FINER, and FINEST (lowest value).
+the API (linked below), they include "critical", "debug", "fatal", "info,"
+and "warning."
 
 For example, if you want to log an info message, you can use:
 
 	log.info("Starting birdname service now.")
+
+Documentation for the logging package is online at go/logging.
 
 ### Add an admin / dashboard page.
 
